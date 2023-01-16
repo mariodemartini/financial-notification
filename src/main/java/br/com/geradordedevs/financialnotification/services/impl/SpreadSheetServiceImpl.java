@@ -33,11 +33,13 @@ public class SpreadSheetServiceImpl implements SpreadSheetService {
         return Objects.equals(file.getContentType(), "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet");
     }
 
-    public static List<SpreadSheetEntity> getSpreadSheetFromExcel(InputStream inputStream){
+    @Override
+    public List<SpreadSheetEntity> getSpreadSheetFromExcel(InputStream inputStream){
+        log.info("importing spreadsheet");
         List<SpreadSheetEntity> spreadSheetEntities = new ArrayList<>();
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            XSSFSheet sheet = workbook.getSheet("spreadsheet");
+            XSSFSheet sheet = workbook.getSheet("financial spreadsheet");
             int rowIndex =0;
             for (Row row : sheet){
                 if (rowIndex ==0){
