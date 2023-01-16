@@ -6,6 +6,7 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
+import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -19,5 +20,6 @@ public class SpreadSheetEntity {
     private BigDecimal input;
     private BigDecimal output;
     private BigDecimal amount;
+
 
 }
