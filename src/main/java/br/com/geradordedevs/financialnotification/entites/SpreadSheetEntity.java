@@ -19,5 +19,5 @@ public class SpreadSheetEntity {
     private BigDecimal input;
     private BigDecimal output;
     private BigDecimal amount;
-    
+
 }
