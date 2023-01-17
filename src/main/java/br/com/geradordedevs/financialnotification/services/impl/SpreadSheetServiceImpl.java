@@ -23,20 +23,19 @@ public class SpreadSheetServiceImpl implements SpreadSheetService {
     private UploadExcelService uploadExcelService;
 
     @Override
-    public SpreadSheetEntity saveSpreadSheetToDatabase(MultipartFile file) {
+    public void saveSpreadSheetToDatabase(MultipartFile file) {
         if (uploadExcelService.validateExcelFile(file)) {
             try {
-                List<SpreadSheetEntity> customers = uploadExcelService.getSpreadSheetFromExcel(file.getInputStream());
-                this.spreadSheetRepository.saveAll(customers);
+                Iterable<SpreadSheetEntity> spreadSheetEntities = uploadExcelService.getSpreadSheetFromExcel(file.getInputStream());
+                this.spreadSheetRepository.saveAll(spreadSheetEntities);
             } catch (IOException e) {
                 throw new IllegalArgumentException("The file is not a valid excel file");
             }
         }
-        return null;
     }
 
     @Override
-    public Iterable<SpreadSheetEntity> getCustomers(){
+    public Iterable<SpreadSheetEntity> getSpreadSheets(){
         return spreadSheetRepository.findAll();
     }
 

@@ -14,12 +14,19 @@ import java.util.Map;
 @Entity
 public class SpreadSheetEntity {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String month;
     private BigDecimal input;
     private BigDecimal output;
     private BigDecimal amount;
 
-
+    @Override
+    public String toString() {
+        return "SpreadSheetEntity{" +
+                "month='" + month + '\'' +
+                ", input=" + input +
+                ", output=" + output +
+                ", amount=" + amount +
+                '}';
+    }
 }
