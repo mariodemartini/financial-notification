@@ -16,9 +16,6 @@ import java.util.List;
 public class SpreadSheetController {
 
     @Autowired
-    private UploadExcelService uploadExcelService;
-
-    @Autowired
     private SpreadSheetFacade spreadSheetFacade;
 
     @PostMapping("/data")
