@@ -36,6 +36,7 @@ public class SpreadSheetServiceImpl implements SpreadSheetService {
 
     @Override
     public Iterable<SpreadSheetEntity> getSpreadSheets(){
+        log.info("list spreadsheet");
         return spreadSheetRepository.findAll();
     }
 

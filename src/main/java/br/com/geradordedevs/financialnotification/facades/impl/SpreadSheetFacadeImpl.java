@@ -35,6 +35,7 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
 
     @Override
     public List<SpreadSheetResponseDTO> getSpreadSheets() {
+        log.info("list spreadsheet");
         return spreadSheetMapper.toListDTO(spreadSheetService.getSpreadSheets());
     }
 
@@ -43,6 +44,7 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
         UploadExcelResponseDTO uploadExcelResponseDTO = new UploadExcelResponseDTO();
         uploadExcelService.getSpreadSheetFromExcel(file.getInputStream());
         if (validateExcelFile(file)){
+            log.info("is true");
             uploadExcelResponseDTO.setSuccess(true);
         }
         return uploadExcelResponseDTO;
