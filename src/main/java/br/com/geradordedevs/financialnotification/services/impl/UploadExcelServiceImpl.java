@@ -35,7 +35,7 @@ public class UploadExcelServiceImpl implements UploadExcelService {
 
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            XSSFSheet sheet = workbook.getSheet("financial-spreadsheet");
+            XSSFSheet sheet = workbook.getSheet("Planilha1");
 
             int rowIndex = 0;
             for (Row row : sheet){
