@@ -1,12 +1,14 @@
 package br.com.geradordedevs.financialnotification.entites;
 
-import jakarta.persistence.*;
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.math.BigDecimal;
-import java.util.Map;
 
 @AllArgsConstructor
 @NoArgsConstructor
@@ -14,19 +16,11 @@ import java.util.Map;
 @Entity
 public class SpreadSheetEntity {
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String month;
     private BigDecimal input;
     private BigDecimal output;
     private BigDecimal amount;
 
-    @Override
-    public String toString() {
-        return "SpreadSheetEntity{" +
-                "month='" + month + '\'' +
-                ", input=" + input +
-                ", output=" + output +
-                ", amount=" + amount +
-                '}';
-    }
 }
