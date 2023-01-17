@@ -1,14 +1,12 @@
 package br.com.geradordedevs.financialnotification.services.impl;
 
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
-import br.com.geradordedevs.financialnotification.repositories.SpreadSheetRepository;
 import br.com.geradordedevs.financialnotification.services.UploadExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
@@ -24,9 +22,6 @@ import java.util.Objects;
 @Slf4j
 public class UploadExcelServiceImpl implements UploadExcelService {
 
-    @Autowired
-    private SpreadSheetRepository spreadSheetRepository;
-
     @Override
     public boolean validateExcelFile(MultipartFile file) {
         log.info("verify if file is a valid file");
@@ -40,10 +35,11 @@ public class UploadExcelServiceImpl implements UploadExcelService {
 
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
-            XSSFSheet sheet = workbook.getSheet("financial spreadsheet");
-            int rowIndex =0;
+            XSSFSheet sheet = workbook.getSheet("financial-spreadsheet");
+
+            int rowIndex = 0;
             for (Row row : sheet){
-                if (rowIndex ==0){
+                if (rowIndex == 0){
                     rowIndex++;
                     continue;
                 }
