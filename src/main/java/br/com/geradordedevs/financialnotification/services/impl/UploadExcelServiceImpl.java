@@ -1,26 +1,29 @@
 package br.com.geradordedevs.financialnotification.services.impl;
 
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
+import br.com.geradordedevs.financialnotification.repositories.SpreadSheetRepository;
 import br.com.geradordedevs.financialnotification.services.UploadExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.math.BigDecimal;
-import java.util.ArrayList;
 import java.util.Iterator;
-import java.util.List;
 import java.util.Objects;
 
 @Service
 @Slf4j
 public class UploadExcelServiceImpl implements UploadExcelService {
+
+    @Autowired
+    private SpreadSheetRepository spreadSheetRepository;
 
     @Override
     public boolean validateExcelFile(MultipartFile file) {
@@ -29,9 +32,8 @@ public class UploadExcelServiceImpl implements UploadExcelService {
     }
 
     @Override
-    public List<SpreadSheetEntity> getSpreadSheetFromExcel(InputStream inputStream){
+    public void getSpreadSheetFromExcel(InputStream inputStream){
         log.info("importing spreadsheet");
-        List<SpreadSheetEntity> spreadSheetEntities = new ArrayList<>();
 
         try {
             XSSFWorkbook workbook = new XSSFWorkbook(inputStream);
@@ -60,14 +62,13 @@ public class UploadExcelServiceImpl implements UploadExcelService {
                     }
                     cellIndex++;
                 }
-                spreadSheetEntities.add(spreadSheetEntity);
+
+                spreadSheetRepository.save(spreadSheetEntity);
             }
 
         } catch (IOException e) {
             e.getStackTrace();
         }
-
-        return spreadSheetEntities;
 
     }
 

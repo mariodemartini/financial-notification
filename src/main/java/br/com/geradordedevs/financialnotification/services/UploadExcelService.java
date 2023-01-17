@@ -10,5 +10,5 @@ public interface UploadExcelService {
 
     boolean validateExcelFile(MultipartFile file);
 
-    List<SpreadSheetEntity> getSpreadSheetFromExcel(InputStream inputStream);
+    void getSpreadSheetFromExcel(InputStream inputStream);
 }
