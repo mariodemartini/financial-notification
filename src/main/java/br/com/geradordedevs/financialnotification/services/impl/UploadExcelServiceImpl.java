@@ -2,6 +2,7 @@ package br.com.geradordedevs.financialnotification.services.impl;
 
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
 import br.com.geradordedevs.financialnotification.repositories.SpreadSheetRepository;
+import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import br.com.geradordedevs.financialnotification.services.UploadExcelService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.poi.ss.usermodel.Cell;
@@ -24,6 +25,9 @@ public class UploadExcelServiceImpl implements UploadExcelService {
 
     @Autowired
     private SpreadSheetRepository spreadSheetRepository;
+
+    @Autowired
+    private SendEmailService sendEmailService;
 
     @Override
     public boolean validateExcelFile(MultipartFile file) {
@@ -64,12 +68,21 @@ public class UploadExcelServiceImpl implements UploadExcelService {
                 }
 
                 spreadSheetRepository.save(spreadSheetEntity);
+
+                sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
+                log.info("terminou a logica");
             }
 
         } catch (IOException e) {
             e.getStackTrace();
         }
+    }
 
+    public void sendEmail(String month, BigDecimal amount){
+        if (amount.doubleValue() < 0){
+            log.info("mes {} e total {} ", month, amount);
+            sendEmailService.sendEmail(month, amount);
+        }
     }
 
 }
