@@ -70,7 +70,6 @@ public class UploadExcelServiceImpl implements UploadExcelService {
                 spreadSheetRepository.save(spreadSheetEntity);
 
                 sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
-                log.info("terminou a logica");
             }
 
         } catch (IOException e) {
@@ -80,7 +79,7 @@ public class UploadExcelServiceImpl implements UploadExcelService {
 
     public void sendEmail(String month, BigDecimal amount){
         if (amount.doubleValue() < 0){
-            log.info("mes {} e total {} ", month, amount);
+            log.info("mes: {} / total $ {} ", month, amount);
             sendEmailService.sendEmail(month, amount);
         }
     }
