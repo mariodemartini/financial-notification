@@ -5,6 +5,7 @@ import br.com.geradordedevs.financialnotification.repositories.SpreadSheetReposi
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import br.com.geradordedevs.financialnotification.services.UploadExcelService;
 import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.mail.EmailException;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
@@ -66,7 +67,6 @@ public class UploadExcelServiceImpl implements UploadExcelService {
                     }
                     cellIndex++;
                 }
-
                 spreadSheetRepository.save(spreadSheetEntity);
 
                 sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
@@ -74,12 +74,15 @@ public class UploadExcelServiceImpl implements UploadExcelService {
 
         } catch (IOException e) {
             e.getStackTrace();
+
+        } catch (EmailException e) {
+            throw new RuntimeException(e);
         }
     }
 
-    public void sendEmail(String month, BigDecimal amount){
+    public void sendEmail(String month, BigDecimal amount) throws EmailException {
         if (amount.doubleValue() < 0){
-            log.info("mes: {} / total $ {} ", month, amount);
+            log.info("month: {} / amount $ {} ", month, amount);
             sendEmailService.sendEmail(month, amount);
         }
     }
