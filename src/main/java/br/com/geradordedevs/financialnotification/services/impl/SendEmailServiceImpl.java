@@ -2,11 +2,10 @@ package br.com.geradordedevs.financialnotification.services.impl;
 
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import lombok.extern.slf4j.Slf4j;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.context.annotation.PropertySource;
-import org.springframework.mail.SimpleMailMessage;
-import org.springframework.mail.javamail.JavaMailSender;
-import org.springframework.mail.javamail.JavaMailSenderImpl;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.EmailException;
+import org.apache.commons.mail.SimpleEmail;
+import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
@@ -15,22 +14,46 @@ import java.math.BigDecimal;
 @Slf4j
 public class SendEmailServiceImpl implements SendEmailService {
 
-    @Autowired
-    private JavaMailSender mailSender;
+    @Value("${email.smpt.port}")
+    private int smptPort;
+
+    @Value("${email.hostname}")
+    private String hostName;
+
+    @Value("${email.user}")
+    private String user;
+
+    @Value("${email.password}")
+    private String password;
+
+    @Value("${email.to}")
+    private String to;
+
+    @Value("${email.from}")
+    private String from;
+
+    @Value("${email.subject}")
+    private String subject;
+
+    private final String START_TEXT = "O balanço do mês de :";
+    private final String END_TEXT = " ficou com saldo negativo de : ";
 
     @Override
     public void sendEmail(String month, BigDecimal amount) {
+        SimpleEmail email = new SimpleEmail();
+        email.setHostName(hostName);
+        email.setSmtpPort(smptPort);
+        email.setDebug(true);
+        email.setAuthenticator(new DefaultAuthenticator(user, password));
+        email.setSSLOnConnect(true);
 
         try {
-            SimpleMailMessage message = new SimpleMailMessage();
-            message.setFrom("{spring.mail.from}");
-            message.setTo("{spring.mail.to}");
-            message.setSubject("{spring.mail.subject}");
-            message.setText("The balance for the month " + month + " is negative in $" + amount);
+            email.addTo(to);
+            email.setFrom(from);
+            email.setSubject(subject + " : " + month);
+            email.setMsg(START_TEXT + month + END_TEXT + amount + "R$");
 
-            mailSender.send(message);
-            log.info("deu certo");
-
+            email.send();
         } catch (Exception exception) {
             log.info("deu erro");
         }
