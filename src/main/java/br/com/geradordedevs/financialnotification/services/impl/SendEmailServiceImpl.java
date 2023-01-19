@@ -1,9 +1,10 @@
 package br.com.geradordedevs.financialnotification.services.impl;
 
+import br.com.geradordedevs.financialnotification.exceptions.EmailException;
+import br.com.geradordedevs.financialnotification.exceptions.enums.EmailEnum;
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.mail.DefaultAuthenticator;
-import org.apache.commons.mail.EmailException;
 import org.apache.commons.mail.SimpleEmail;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Service;
@@ -35,8 +36,8 @@ public class SendEmailServiceImpl implements SendEmailService {
     @Value("${email.subject}")
     private String subject;
 
-    private final String START_TEXT = "O balanço do mês de :";
-    private final String END_TEXT = " ficou com saldo negativo de : ";
+    private final String START_TEXT = "Balance for the month of:";
+    private final String END_TEXT = " had a negative balance of: $ ";
 
     @Override
     public void sendEmail(String month, BigDecimal amount) {
@@ -51,12 +52,17 @@ public class SendEmailServiceImpl implements SendEmailService {
             email.addTo(to);
             email.setFrom(from);
             email.setSubject(subject + " : " + month);
-            email.setMsg(START_TEXT + month + END_TEXT + amount + "R$");
+            email.setMsg(START_TEXT + month + END_TEXT + amount);
 
             email.send();
-        } catch (Exception exception) {
-            log.info("deu erro");
+
+        } catch (EmailException exception) {
+            throw new EmailException(EmailEnum.ERROR_SEND_EMAIL);
+
+        } catch (org.apache.commons.mail.EmailException e) {
+            throw new RuntimeException(e);
         }
     }
 
 }
+

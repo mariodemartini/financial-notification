@@ -1,6 +1,8 @@
 package br.com.geradordedevs.financialnotification.services.impl;
 
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
+import br.com.geradordedevs.financialnotification.exceptions.UploadExcelException;
+import br.com.geradordedevs.financialnotification.exceptions.enums.UploadExcelEnum;
 import br.com.geradordedevs.financialnotification.repositories.SpreadSheetRepository;
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import br.com.geradordedevs.financialnotification.services.UploadExcelService;
@@ -72,11 +74,11 @@ public class UploadExcelServiceImpl implements UploadExcelService {
                 sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
             }
 
-        } catch (IOException e) {
+        } catch (IOException | EmailException e) {
             e.getStackTrace();
 
-        } catch (EmailException e) {
-            throw new RuntimeException(e);
+        } catch (UploadExcelException e) {
+            throw new UploadExcelException(UploadExcelEnum.ERROR_IMPORTING_SPREADSHEET);
         }
     }
 
