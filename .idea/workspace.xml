@@ -5,7 +5,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3b2ebd81-726b-4de7-8d57-9932a1d6ec9a" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/checksums.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/md5-checksums.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/checksums/sha1-checksums.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/SendEmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/SendEmailService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/impl/SendEmailServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/impl/SendEmailServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/impl/UploadExcelServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/br/com/geradordedevs/financialnotification/services/impl/UploadExcelServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
