@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="pt"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>SendEmailServiceImpl.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">financial-notification</a> &gt; <a href="index.source.html" class="el_package">br.com.geradordedevs.financialnotification.services.impl</a> &gt; <span class="el_source">SendEmailServiceImpl.java</span></div><h1>SendEmailServiceImpl.java</h1><pre class="source lang-java linenums">package br.com.geradordedevs.financialnotification.services.impl;
+
+import br.com.geradordedevs.financialnotification.exceptions.EmailException;
+import br.com.geradordedevs.financialnotification.exceptions.enums.EmailEnum;
+import br.com.geradordedevs.financialnotification.services.SendEmailService;
+import lombok.extern.slf4j.Slf4j;
+import org.apache.commons.mail.DefaultAuthenticator;
+import org.apache.commons.mail.SimpleEmail;
+import org.springframework.beans.factory.annotation.Value;
+import org.springframework.stereotype.Service;
+
+import java.math.BigDecimal;
+
+@Service
+<span class="nc" id="L15">@Slf4j</span>
+<span class="nc" id="L16">public class SendEmailServiceImpl implements SendEmailService {</span>
+
+    @Value(&quot;${email.smpt.port}&quot;)
+    private int smptPort;
+
+    @Value(&quot;${email.hostname}&quot;)
+    private String hostName;
+
+    @Value(&quot;${email.user}&quot;)
+    private String user;
+
+    @Value(&quot;${email.password}&quot;)
+    private String password;
+
+    @Value(&quot;${email.to}&quot;)
+    private String to;
+
+    @Value(&quot;${email.from}&quot;)
+    private String from;
+
+    @Value(&quot;${email.subject}&quot;)
+    private String subject;
+
+<span class="nc" id="L39">    private final String START_TEXT = &quot;Balance for the month of:&quot;;</span>
+<span class="nc" id="L40">    private final String END_TEXT = &quot; had a negative balance of: $ &quot;;</span>
+
+    @Override
+    public void sendEmail(String month, BigDecimal amount) {
+<span class="nc" id="L44">        SimpleEmail email = new SimpleEmail();</span>
+<span class="nc" id="L45">        email.setHostName(hostName);</span>
+<span class="nc" id="L46">        email.setSmtpPort(smptPort);</span>
+<span class="nc" id="L47">        email.setDebug(true);</span>
+<span class="nc" id="L48">        email.setAuthenticator(new DefaultAuthenticator(user, password));</span>
+<span class="nc" id="L49">        email.setSSLOnConnect(true);</span>
+
+        try {
+<span class="nc" id="L52">            email.addTo(to);</span>
+<span class="nc" id="L53">            email.setFrom(from);</span>
+<span class="nc" id="L54">            email.setSubject(subject + &quot; : &quot; + month);</span>
+<span class="nc" id="L55">            email.setMsg(START_TEXT + month + END_TEXT + amount);</span>
+
+<span class="nc" id="L57">            email.send();</span>
+
+<span class="nc" id="L59">        } catch (EmailException exception) {</span>
+<span class="nc" id="L60">            throw new EmailException(EmailEnum.ERROR_SEND_EMAIL);</span>
+
+<span class="nc" id="L62">        } catch (org.apache.commons.mail.EmailException e) {</span>
+<span class="nc" id="L63">            throw new RuntimeException(e);</span>
+<span class="nc" id="L64">        }</span>
+<span class="nc" id="L65">    }</span>
+
+}
+
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
