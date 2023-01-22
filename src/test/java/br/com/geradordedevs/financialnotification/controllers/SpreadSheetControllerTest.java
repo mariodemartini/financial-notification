@@ -28,6 +28,7 @@ public class SpreadSheetControllerTest {
     private SpreadSheetFacade spreadSheetFacade;
 
     private static final String LIST_ROUTE = "/upload-sheet";
+    private static final String WRONG_LIST_ROUTE = "/uploadsheet";
     private static final String UPLOAD_ROUTE = "/upload-sheet/data";
 
     @Test
@@ -38,5 +39,10 @@ public class SpreadSheetControllerTest {
     @Test
     public void getSpreadSheetsShouldReturnOk() throws Exception{
         mockMvc.perform(get(LIST_ROUTE)).andExpect(status().isOk());
+    }
+
+    @Test
+    public void getSpreadSheetsWrongRouteShouldReturnNotFound() throws Exception{
+        mockMvc.perform(get(WRONG_LIST_ROUTE)).andExpect(status().isNotFound());
     }
 }
