@@ -39,19 +39,6 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
     private SpreadSheetMapper spreadSheetMapper;
 
     @Override
-    public void saveSpreadSheetToDatabase(MultipartFile file) {
-
-        if (spreadSheetService.validateExcelFile(file)) {
-            try {
-                getSpreadSheetFromExcel(file.getInputStream());
-
-            } catch (IOException e) {
-                throw new IllegalArgumentException("The file is not a valid excel file");
-            }
-        }
-    }
-
-    @Override
     public List<SpreadSheetResponseDTO> getSpreadSheets() {
         log.info("list spreadsheet");
         return spreadSheetMapper.toListDTO(spreadSheetService.getSpreadSheets());

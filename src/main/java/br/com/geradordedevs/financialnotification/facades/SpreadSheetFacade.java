@@ -11,9 +11,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface SpreadSheetFacade {
-
-    void saveSpreadSheetToDatabase(MultipartFile file);
-
+    
     List<SpreadSheetResponseDTO> getSpreadSheets();
 
     UploadExcelResponseDTO uploadSheet(MultipartFile file) throws IOException;
