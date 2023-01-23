@@ -44,7 +44,6 @@ public class SendEmailServiceImpl implements SendEmailService {
         SimpleEmail email = new SimpleEmail();
         email.setHostName(hostName);
         email.setSmtpPort(smptPort);
-        email.setDebug(true);
         email.setAuthenticator(new DefaultAuthenticator(user, password));
         email.setSSLOnConnect(true);
 
