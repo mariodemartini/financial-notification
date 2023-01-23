@@ -1,10 +1,12 @@
 package br.com.geradordedevs.financialnotification.facades.impl;
 
 import br.com.geradordedevs.financialnotification.dtos.responses.SpreadSheetResponseDTO;
+import br.com.geradordedevs.financialnotification.dtos.responses.UploadExcelResponseDTO;
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
 import br.com.geradordedevs.financialnotification.mappers.SpreadSheetMapper;
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import br.com.geradordedevs.financialnotification.services.SpreadSheetService;
+import org.apache.poi.hpsf.ClassIDPredefined;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -13,10 +15,14 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileInputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
@@ -56,7 +62,10 @@ public class SpreadSheetFacadeImplTest {
         assertEquals(returnListSpreadSheetDTO(), spreadSheetFacade.getSpreadSheets());
     }
 
-
+    @Test
+    public void uploadSheetShouldReturnTrue() throws Exception{
+        assertEquals(returnUploadExcelResponseDtoTrue(), spreadSheetService.validateExcelFile(returnValidFile()));
+    }
 
     private List<SpreadSheetResponseDTO> returnListSpreadSheetDTO() {
         List<SpreadSheetResponseDTO> list = new ArrayList<>();
@@ -78,5 +87,13 @@ public class SpreadSheetFacadeImplTest {
 
     private SpreadSheetEntity returnSpreadSheetEntity() {
         return new SpreadSheetEntity(MOCK_ID, MOCK_MONTH, MOCK_INPUT, MOCK_OUTPUT, MOCK_AMOUNT);
+    }
+
+    private UploadExcelResponseDTO returnUploadExcelResponseDtoTrue() {
+        return new UploadExcelResponseDTO(true);
+    }
+
+    private MultipartFile returnValidFile() {
+        return null;
     }
 }
