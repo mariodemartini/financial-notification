@@ -44,25 +44,24 @@ import java.math.BigDecimal;
 <span class="nc" id="L44">        SimpleEmail email = new SimpleEmail();</span>
 <span class="nc" id="L45">        email.setHostName(hostName);</span>
 <span class="nc" id="L46">        email.setSmtpPort(smptPort);</span>
-<span class="nc" id="L47">        email.setDebug(true);</span>
-<span class="nc" id="L48">        email.setAuthenticator(new DefaultAuthenticator(user, password));</span>
-<span class="nc" id="L49">        email.setSSLOnConnect(true);</span>
+<span class="nc" id="L47">        email.setAuthenticator(new DefaultAuthenticator(user, password));</span>
+<span class="nc" id="L48">        email.setSSLOnConnect(true);</span>
 
         try {
-<span class="nc" id="L52">            email.addTo(to);</span>
-<span class="nc" id="L53">            email.setFrom(from);</span>
-<span class="nc" id="L54">            email.setSubject(subject + &quot; : &quot; + month);</span>
-<span class="nc" id="L55">            email.setMsg(START_TEXT + month + END_TEXT + amount);</span>
+<span class="nc" id="L51">            email.addTo(to);</span>
+<span class="nc" id="L52">            email.setFrom(from);</span>
+<span class="nc" id="L53">            email.setSubject(subject + &quot; : &quot; + month);</span>
+<span class="nc" id="L54">            email.setMsg(START_TEXT + month + END_TEXT + amount);</span>
 
-<span class="nc" id="L57">            email.send();</span>
+<span class="nc" id="L56">            email.send();</span>
 
-<span class="nc" id="L59">        } catch (EmailException exception) {</span>
-<span class="nc" id="L60">            throw new EmailException(EmailEnum.ERROR_SEND_EMAIL);</span>
+<span class="nc" id="L58">        } catch (EmailException exception) {</span>
+<span class="nc" id="L59">            throw new EmailException(EmailEnum.ERROR_SEND_EMAIL);</span>
 
-<span class="nc" id="L62">        } catch (org.apache.commons.mail.EmailException e) {</span>
-<span class="nc" id="L63">            throw new RuntimeException(e);</span>
-<span class="nc" id="L64">        }</span>
-<span class="nc" id="L65">    }</span>
+<span class="nc" id="L61">        } catch (org.apache.commons.mail.EmailException e) {</span>
+<span class="nc" id="L62">            throw new RuntimeException(e);</span>
+<span class="nc" id="L63">        }</span>
+<span class="nc" id="L64">    }</span>
 
 }
 

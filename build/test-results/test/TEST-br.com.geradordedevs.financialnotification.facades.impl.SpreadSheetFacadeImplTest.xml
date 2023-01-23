@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuite name="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-23T17:18:06" hostname="mario-Inspiron-3501" time="0.869">
+  <properties/>
+  <testcase name="getSpreadSheetsShouldReturnOk" classname="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" time="0.869"/>
+  <system-out><![CDATA[14:18:07.137 [Test worker] INFO br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImpl - list spreadsheet
+]]></system-out>
+  <system-err><![CDATA[]]></system-err>
+</testsuite>
