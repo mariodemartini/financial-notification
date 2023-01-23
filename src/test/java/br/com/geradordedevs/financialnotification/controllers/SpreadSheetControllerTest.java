@@ -1,12 +1,9 @@
 package br.com.geradordedevs.financialnotification.controllers;
 
 import br.com.geradordedevs.financialnotification.controller.SpreadSheetController;
-import br.com.geradordedevs.financialnotification.dtos.responses.UploadExcelResponseDTO;
 import br.com.geradordedevs.financialnotification.facades.SpreadSheetFacade;
-import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
-import org.mockito.MockitoAnnotations;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
@@ -14,12 +11,7 @@ import org.springframework.boot.test.mock.mockito.MockBean;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.web.multipart.MultipartFile;
 
-import java.io.IOException;
-
-import static org.mockito.ArgumentMatchers.any;
-import static org.powermock.api.mockito.PowerMockito.when;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.multipart;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
@@ -54,5 +46,5 @@ public class SpreadSheetControllerTest {
     public void getSpreadSheetsWrongRouteShouldReturnNotFound() throws Exception{
         mockMvc.perform(get(WRONG_LIST_ROUTE)).andExpect(status().isNotFound());
     }
-    
+
 }
