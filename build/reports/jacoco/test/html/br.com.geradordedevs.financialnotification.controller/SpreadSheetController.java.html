@@ -16,7 +16,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping(&quot;/upload-sheet&quot;)
-<span class="fc" id="L19">public class SpreadSheetController {</span>
+<span class="nc" id="L19">public class SpreadSheetController {</span>
 
     @Autowired
     private SpreadSheetFacade spreadSheetFacade;
@@ -27,7 +27,7 @@ import java.util.List;
     })
     @PostMapping(&quot;/data&quot;)
     public ResponseEntity&lt;UploadExcelResponseDTO&gt; uploadSpreadSheet (@RequestParam(&quot;file&quot;) MultipartFile file) throws IOException {
-<span class="fc" id="L30">        return new ResponseEntity&lt;&gt;(spreadSheetFacade.uploadSheet(file), HttpStatus.ACCEPTED);</span>
+<span class="nc" id="L30">        return new ResponseEntity&lt;&gt;(spreadSheetFacade.uploadSheet(file), HttpStatus.ACCEPTED);</span>
     }
 
     @ApiResponses(value = {
