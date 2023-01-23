@@ -11,7 +11,7 @@ import java.math.BigDecimal;
 import java.util.List;
 
 public interface SpreadSheetFacade {
-    
+
     List<SpreadSheetResponseDTO> getSpreadSheets();
 
     UploadExcelResponseDTO uploadSheet(MultipartFile file) throws IOException;
