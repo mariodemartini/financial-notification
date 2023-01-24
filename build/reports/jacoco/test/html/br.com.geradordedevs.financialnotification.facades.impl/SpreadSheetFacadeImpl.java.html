@@ -26,8 +26,8 @@ import java.util.Iterator;
 import java.util.List;
 
 @Component
-<span class="fc" id="L29">@Slf4j</span>
-<span class="fc" id="L30">public class SpreadSheetFacadeImpl implements SpreadSheetFacade {</span>
+<span class="nc" id="L29">@Slf4j</span>
+<span class="nc" id="L30">public class SpreadSheetFacadeImpl implements SpreadSheetFacade {</span>
 
     @Autowired
     private SpreadSheetService spreadSheetService;
@@ -46,16 +46,16 @@ import java.util.List;
 
     @Override
     public UploadExcelResponseDTO uploadSheet(MultipartFile file) throws IOException {
-<span class="fc" id="L49">        UploadExcelResponseDTO uploadExcelResponseDTO = new UploadExcelResponseDTO();</span>
+<span class="nc" id="L49">        UploadExcelResponseDTO uploadExcelResponseDTO = new UploadExcelResponseDTO();</span>
 
-<span class="pc bpc" id="L51" title="1 of 2 branches missed.">        if (spreadSheetService.validateExcelFile(file)){</span>
+<span class="nc bnc" id="L51" title="All 2 branches missed.">        if (spreadSheetService.validateExcelFile(file)){</span>
 <span class="nc" id="L52">            log.info(&quot;is true&quot;);</span>
 <span class="nc" id="L53">            uploadExcelResponseDTO.setSuccess(true);</span>
 
 <span class="nc" id="L55">            getSpreadSheetFromExcel(file.getInputStream());</span>
         }
 
-<span class="fc" id="L58">        return uploadExcelResponseDTO;</span>
+<span class="nc" id="L58">        return uploadExcelResponseDTO;</span>
     }
 
     @Override
