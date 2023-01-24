@@ -48,11 +48,11 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
     public UploadExcelResponseDTO uploadSheet(MultipartFile file) throws IOException {
         UploadExcelResponseDTO uploadExcelResponseDTO = new UploadExcelResponseDTO();
 
-        getSpreadSheetFromExcel(file.getInputStream());
-
         if (spreadSheetService.validateExcelFile(file)){
             log.info("is true");
             uploadExcelResponseDTO.setSuccess(true);
+
+            getSpreadSheetFromExcel(file.getInputStream());
         }
 
         return uploadExcelResponseDTO;
@@ -95,11 +95,8 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
                 sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
             }
 
-        } catch (UploadExcelException e) {
-            throw new UploadExcelException(UploadExcelEnum.ERROR_IMPORTING_SPREADSHEET);
-
         } catch (IOException e) {
-            throw new RuntimeException(e);
+            throw new UploadExcelException(UploadExcelEnum.ERROR_IMPORTING_SPREADSHEET);
 
         } catch (EmailException e) {
             throw new RuntimeException(e);
