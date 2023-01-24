@@ -33,7 +33,7 @@ public class SpreadSheetControllerTest {
 
     @Test
     public void uploadSpreadSheetShouldReturnAccepted() throws Exception{
-        MockMultipartFile mmf = new MockMultipartFile("file", "test.xlsx", "text/plain", "abcd".getBytes());
+        MockMultipartFile mmf = new MockMultipartFile("file", "test.xlsx", "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet", "abcd".getBytes());
         mockMvc.perform(multipart(UPLOAD_ROUTE).file(mmf)).andExpect(status().isAccepted());
     }
 

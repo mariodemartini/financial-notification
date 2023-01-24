@@ -1,13 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-01-23T17:46:15" hostname="mario-Inspiron-3501" time="0.867">
+<testsuite name="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" tests="1" skipped="0" failures="1" errors="0" timestamp="2023-01-24T19:57:21" hostname="mario-Inspiron-3501" time="0.972">
   <properties/>
-  <testcase name="uploadSheetShouldReturnTrue" classname="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" time="0.867">
-    <failure message="java.lang.AssertionError: expected:&lt;UploadExcelResponseDTO(success=true)&gt; but was:&lt;false&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;UploadExcelResponseDTO(success=true)&gt; but was:&lt;false&gt;
+  <testcase name="uploadSheetShouldReturnOk" classname="br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest" time="0.972">
+    <failure message="java.lang.AssertionError: expected:&lt;UploadExcelResponseDTO(success=true)&gt; but was:&lt;UploadExcelResponseDTO(success=false)&gt;" type="java.lang.AssertionError">java.lang.AssertionError: expected:&lt;UploadExcelResponseDTO(success=true)&gt; but was:&lt;UploadExcelResponseDTO(success=false)&gt;
 	at org.junit.Assert.fail(Assert.java:89)
 	at org.junit.Assert.failNotEquals(Assert.java:835)
 	at org.junit.Assert.assertEquals(Assert.java:120)
 	at org.junit.Assert.assertEquals(Assert.java:146)
-	at br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest.uploadSheetShouldReturnTrue(SpreadSheetFacadeImplTest.java:64)
+	at br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest.uploadSheetShouldReturnOk(SpreadSheetFacadeImplTest.java:71)
 	at java.base/jdk.internal.reflect.DirectMethodHandleAccessor.invoke(DirectMethodHandleAccessor.java:104)
 	at java.base/java.lang.reflect.Method.invoke(Method.java:578)
 	at org.junit.runners.model.FrameworkMethod$1.runReflectiveCall(FrameworkMethod.java:59)

@@ -15,10 +15,14 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.core.io.ClassPathResource;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
+import java.io.File;
 import java.io.FileInputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
@@ -63,8 +67,14 @@ public class SpreadSheetFacadeImplTest {
     }
 
     @Test
-    public void uploadSheetShouldReturnTrue() throws Exception{
-        assertEquals(returnUploadExcelResponseDtoTrue(), spreadSheetService.validateExcelFile(returnValidFile()));
+    public void uploadSheetShouldReturnOk() throws Exception{
+        assertEquals(returnUploadExcelResponseDtoTrue(), spreadSheetFacade.uploadSheet(returnValidFile()));
+    }
+
+    @Test
+    public void sendEMailReturnOk() throws Exception{
+        spreadSheetFacade.sendEmail(MOCK_MONTH, MOCK_AMOUNT);
+        verify(sendEmailService, timeout(1)).sendEmail(MOCK_MONTH, MOCK_AMOUNT);
     }
 
     private List<SpreadSheetResponseDTO> returnListSpreadSheetDTO() {
@@ -93,7 +103,13 @@ public class SpreadSheetFacadeImplTest {
         return new UploadExcelResponseDTO(true);
     }
 
-    private MultipartFile returnValidFile() {
-        return null;
+    private MultipartFile returnValidFile() throws IOException {
+        FileInputStream file = new FileInputStream("src/test/resource/desafio2.xlsx");
+
+        return new MockMultipartFile(
+                "file",
+                "desafio2.xlsx",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                file);
     }
 }
