@@ -24,14 +24,14 @@ import java.util.Objects;
 
     @Override
     public SpreadSheetEntity saveSpreadSheetToDatabase(SpreadSheetEntity spreadSheetEntity) {
-<span class="nc" id="L27">        log.info(&quot;saving spreadsheetEntity&quot;);</span>
-<span class="nc" id="L28">        return spreadSheetRepository.save(spreadSheetEntity);</span>
+<span class="fc" id="L27">        log.info(&quot;saving spreadsheetEntity&quot;);</span>
+<span class="fc" id="L28">        return spreadSheetRepository.save(spreadSheetEntity);</span>
     }
 
     @Override
     public Iterable&lt;SpreadSheetEntity&gt; getSpreadSheets(){
-<span class="nc" id="L33">        log.info(&quot;list spreadsheet&quot;);</span>
-<span class="nc" id="L34">        return spreadSheetRepository.findAll();</span>
+<span class="fc" id="L33">        log.info(&quot;list spreadsheet&quot;);</span>
+<span class="fc" id="L34">        return spreadSheetRepository.findAll();</span>
     }
 
 }

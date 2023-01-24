@@ -36,8 +36,8 @@ public class SendEmailServiceImpl implements SendEmailService {
     @Value("${email.subject}")
     private String subject;
 
-    private final String START_TEXT = "Balance for the month of:";
-    private final String END_TEXT = " had a negative balance of: $ ";
+    private static final String START_TEXT = "Balance for the month of:";
+    private static final String END_TEXT = " had a negative balance of: $";
 
     @Override
     public void sendEmail(String month, BigDecimal amount) {
@@ -55,11 +55,8 @@ public class SendEmailServiceImpl implements SendEmailService {
 
             email.send();
 
-        } catch (EmailException exception) {
+        } catch (EmailException | org.apache.commons.mail.EmailException exception) {
             throw new EmailException(EmailEnum.ERROR_SEND_EMAIL);
-
-        } catch (org.apache.commons.mail.EmailException e) {
-            throw new RuntimeException(e);
         }
     }
 

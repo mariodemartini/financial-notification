@@ -1,8 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-24T22:45:40" hostname="mario-Inspiron-3501" time="0.253">
+<testsuite name="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" tests="3" skipped="0" failures="0" errors="0" timestamp="2023-01-24T23:25:04" hostname="mario-Inspiron-3501" time="0.044">
   <properties/>
-  <testcase name="validateExcelFileReturnTrue" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.253"/>
-  <system-out><![CDATA[19:45:40.647 [Test worker] INFO br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImpl - verify if file is a valid file
+  <testcase name="saveSpreadSheetToDatabaseReturnOk" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.039"/>
+  <testcase name="getSpreadSheetsReturnOk" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.002"/>
+  <testcase name="validateExcelFileReturnTrue" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.003"/>
+  <system-out><![CDATA[2023-01-24 20:25:04.664  INFO 63320 --- [    Test worker] b.c.g.f.s.impl.SpreadSheetServiceImpl    : saving spreadsheetEntity
+2023-01-24 20:25:04.666  INFO 63320 --- [    Test worker] b.c.g.f.s.impl.SpreadSheetServiceImpl    : list spreadsheet
+2023-01-24 20:25:04.669  INFO 63320 --- [    Test worker] b.c.g.f.s.impl.SpreadSheetServiceImpl    : verify if file is a valid file
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

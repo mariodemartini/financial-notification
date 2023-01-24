@@ -1,0 +1,6 @@
+projectKey=financial-notification
+serverUrl=http://localhost:9000
+serverVersion=9.8.0.63668
+dashboardUrl=http://localhost:9000/dashboard?id=financial-notification
+ceTaskId=AYXmK0T-SsGmubcfTR57
+ceTaskUrl=http://localhost:9000/api/ce/task?id=AYXmK0T-SsGmubcfTR57

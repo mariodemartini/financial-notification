@@ -4,6 +4,7 @@ import br.com.geradordedevs.financialnotification.dtos.responses.SpreadSheetResp
 import br.com.geradordedevs.financialnotification.dtos.responses.UploadExcelResponseDTO;
 import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
 import br.com.geradordedevs.financialnotification.exceptions.UploadExcelException;
+import br.com.geradordedevs.financialnotification.exceptions.enums.EmailEnum;
 import br.com.geradordedevs.financialnotification.exceptions.enums.UploadExcelEnum;
 import br.com.geradordedevs.financialnotification.facades.SpreadSheetFacade;
 import br.com.geradordedevs.financialnotification.mappers.SpreadSheetMapper;
@@ -95,11 +96,8 @@ public class SpreadSheetFacadeImpl implements SpreadSheetFacade {
                 sendEmail(spreadSheetEntity.getMonth(), spreadSheetEntity.getAmount());
             }
 
-        } catch (IOException e) {
+        } catch (IOException | EmailException e) {
             throw new UploadExcelException(UploadExcelEnum.ERROR_IMPORTING_SPREADSHEET);
-
-        } catch (EmailException e) {
-            throw new RuntimeException(e);
         }
     }
 

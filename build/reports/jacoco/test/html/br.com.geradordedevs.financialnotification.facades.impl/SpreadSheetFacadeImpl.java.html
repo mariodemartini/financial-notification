@@ -26,8 +26,8 @@ import java.util.Iterator;
 import java.util.List;
 
 @Component
-<span class="nc" id="L29">@Slf4j</span>
-<span class="nc" id="L30">public class SpreadSheetFacadeImpl implements SpreadSheetFacade {</span>
+<span class="fc" id="L29">@Slf4j</span>
+<span class="fc" id="L30">public class SpreadSheetFacadeImpl implements SpreadSheetFacade {</span>
 
     @Autowired
     private SpreadSheetService spreadSheetService;
@@ -40,8 +40,8 @@ import java.util.List;
 
     @Override
     public List&lt;SpreadSheetResponseDTO&gt; getSpreadSheets() {
-<span class="nc" id="L43">        log.info(&quot;list spreadsheet&quot;);</span>
-<span class="nc" id="L44">        return spreadSheetMapper.toListDTO(spreadSheetService.getSpreadSheets());</span>
+<span class="fc" id="L43">        log.info(&quot;list spreadsheet&quot;);</span>
+<span class="fc" id="L44">        return spreadSheetMapper.toListDTO(spreadSheetService.getSpreadSheets());</span>
     }
 
     @Override
@@ -105,10 +105,10 @@ import java.util.List;
 
     @Override
     public void sendEmail(String month, BigDecimal amount) throws EmailException {
-<span class="nc bnc" id="L108" title="All 2 branches missed.">        if (amount.doubleValue() &lt; 0){</span>
-<span class="nc" id="L109">            log.info(&quot;month: {} / amount $ {} &quot;, month, amount);</span>
-<span class="nc" id="L110">            sendEmailService.sendEmail(month, amount);</span>
+<span class="pc bpc" id="L108" title="1 of 2 branches missed.">        if (amount.doubleValue() &lt; 0){</span>
+<span class="fc" id="L109">            log.info(&quot;month: {} / amount $ {} &quot;, month, amount);</span>
+<span class="fc" id="L110">            sendEmailService.sendEmail(month, amount);</span>
         }
-<span class="nc" id="L112">    }</span>
+<span class="fc" id="L112">    }</span>
 }
 </pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.8.202204050719</span></div></body></html>
