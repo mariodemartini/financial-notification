@@ -68,7 +68,7 @@ public class SpreadSheetFacadeImplTest {
     }
 
     @Test
-    public void sendEMailReturnOk() throws Exception{
+    public void sendEmailReturnOk() throws Exception{
         spreadSheetFacade.sendEmail(MOCK_MONTH, MOCK_NEGATIVE_AMOUNT);
         verify(sendEmailService, timeout(1)).sendEmail(MOCK_MONTH, MOCK_NEGATIVE_AMOUNT);
     }
