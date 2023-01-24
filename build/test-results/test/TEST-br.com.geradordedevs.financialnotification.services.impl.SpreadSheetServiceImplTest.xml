@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<testsuite name="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-24T21:48:21" hostname="mario-Inspiron-3501" time="0.24">
+<testsuite name="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" tests="1" skipped="0" failures="0" errors="0" timestamp="2023-01-24T22:45:40" hostname="mario-Inspiron-3501" time="0.253">
   <properties/>
-  <testcase name="getSpreadSheetsReturnOk" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.24"/>
-  <system-out><![CDATA[18:48:21.247 [Test worker] INFO br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImpl - list spreadsheet
+  <testcase name="validateExcelFileReturnTrue" classname="br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest" time="0.253"/>
+  <system-out><![CDATA[19:45:40.647 [Test worker] INFO br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImpl - verify if file is a valid file
 ]]></system-out>
   <system-err><![CDATA[]]></system-err>
 </testsuite>

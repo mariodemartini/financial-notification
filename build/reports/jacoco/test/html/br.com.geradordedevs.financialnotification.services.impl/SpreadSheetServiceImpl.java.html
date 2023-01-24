@@ -18,8 +18,8 @@ import java.util.Objects;
 
     @Override
     public boolean validateExcelFile(MultipartFile file) {
-<span class="nc" id="L21">        log.info(&quot;verify if file is a valid file&quot;);</span>
-<span class="nc" id="L22">        return Objects.equals(file.getContentType(), &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;);</span>
+<span class="fc" id="L21">        log.info(&quot;verify if file is a valid file&quot;);</span>
+<span class="fc" id="L22">        return Objects.equals(file.getContentType(), &quot;application/vnd.openxmlformats-officedocument.spreadsheetml.sheet&quot;);</span>
     }
 
     @Override
@@ -30,8 +30,8 @@ import java.util.Objects;
 
     @Override
     public Iterable&lt;SpreadSheetEntity&gt; getSpreadSheets(){
-<span class="fc" id="L33">        log.info(&quot;list spreadsheet&quot;);</span>
-<span class="fc" id="L34">        return spreadSheetRepository.findAll();</span>
+<span class="nc" id="L33">        log.info(&quot;list spreadsheet&quot;);</span>
+<span class="nc" id="L34">        return spreadSheetRepository.findAll();</span>
     }
 
 }

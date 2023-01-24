@@ -11,31 +11,17 @@
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/7.6/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/classes/java/test/br/com/geradordedevs/financialnotification/facades/impl/SpreadSheetFacadeImplTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/test/br/com/geradordedevs/financialnotification/facades/impl/SpreadSheetFacadeImplTest.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/jacoco/test.exec" beforeDir="false" afterPath="$PROJECT_DIR$/build/jacoco/test.exec" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/UploadExcelResponseDTO.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/UploadExcelResponseDTO.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/UploadExcelResponseDTO.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/UploadExcelResponseDTO.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.dtos.responses/index.source.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/SpreadSheetFacadeImpl.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/SpreadSheetFacadeImpl.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/SpreadSheetFacadeImpl.java.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/SpreadSheetFacadeImpl.java.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/index.source.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/br.com.geradordedevs.financialnotification.facades.impl/index.source.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/index.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/html/jacoco-sessions.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/html/jacoco-sessions.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/jacoco/test/jacocoTestReport.xml" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/jacoco/test/jacocoTestReport.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/classes/br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest.html" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/reports/tests/test/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/build/reports/tests/test/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/reports/tests/test/packages/br.com.geradordedevs.financialnotification.facades.impl.html" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/TEST-br.com.geradordedevs.financialnotification.facades.impl.SpreadSheetFacadeImplTest.xml" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/output.bin.idx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/test-results/test/binary/results.bin" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/compileTransaction/stash-dir/SpreadSheetFacadeImplTest.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileTestJava/previous-compilation-data.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/test/java/br/com/geradordedevs/financialnotification/facades/impl/SpreadSheetFacadeImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/geradordedevs/financialnotification/facades/impl/SpreadSheetFacadeImplTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/br/com/geradordedevs/financialnotification/services/impl/SpreadSheetServiceImplTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/br/com/geradordedevs/financialnotification/services/impl/SpreadSheetServiceImplTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,30 +79,7 @@
       <recent name="br.com.geradordedevs.financialnotification.exceptions" />
     </key>
   </component>
-  <component name="RunManager" selected="Gradle.SpreadSheetServiceImplTest.getSpreadSheetsReturnOk">
-    <configuration name="SpreadSheetControllerTest.uploadSpreadSheetShouldReturnAccepted" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
-      <ExternalSystemSettings>
-        <option name="executionName" />
-        <option name="externalProjectPath" value="$PROJECT_DIR$" />
-        <option name="externalSystemIdString" value="GRADLE" />
-        <option name="scriptParameters" value="" />
-        <option name="taskDescriptions">
-          <list />
-        </option>
-        <option name="taskNames">
-          <list>
-            <option value=":test" />
-            <option value="--tests" />
-            <option value="&quot;br.com.geradordedevs.financialnotification.controllers.SpreadSheetControllerTest.uploadSpreadSheetShouldReturnAccepted&quot;" />
-          </list>
-        </option>
-        <option name="vmOptions" />
-      </ExternalSystemSettings>
-      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
-      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
-      <DebugAllEnabled>false</DebugAllEnabled>
-      <method v="2" />
-    </configuration>
+  <component name="RunManager" selected="Gradle.SpreadSheetServiceImplTest.validateExcelFileReturnTrue">
     <configuration name="SpreadSheetFacadeImplTest.sendEMailReturnOk" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -209,13 +172,36 @@
       <DebugAllEnabled>false</DebugAllEnabled>
       <method v="2" />
     </configuration>
+    <configuration name="SpreadSheetServiceImplTest.validateExcelFileReturnTrue" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;br.com.geradordedevs.financialnotification.services.impl.SpreadSheetServiceImplTest.validateExcelFileReturnTrue&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.SpreadSheetServiceImplTest.validateExcelFileReturnTrue" />
         <item itemvalue="Gradle.SpreadSheetServiceImplTest.getSpreadSheetsReturnOk" />
         <item itemvalue="Gradle.SpreadSheetServiceImplTest.saveSpreadSheetToDatabaseReturnOk" />
         <item itemvalue="Gradle.SpreadSheetFacadeImplTest.sendEMailReturnOk" />
         <item itemvalue="Gradle.SpreadSheetFacadeImplTest.uploadSheetShouldReturnOk" />
-        <item itemvalue="Gradle.SpreadSheetControllerTest.uploadSpreadSheetShouldReturnAccepted" />
       </list>
     </recent_temporary>
   </component>

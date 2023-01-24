@@ -9,13 +9,18 @@ import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.mock.web.MockMultipartFile;
+import org.springframework.web.multipart.MultipartFile;
 
+import java.io.FileInputStream;
+import java.io.IOException;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
 import static org.junit.Assert.assertEquals;
-import static org.mockito.Mockito.*;
+import static org.junit.Assert.assertTrue;
+import static org.mockito.Mockito.when;
 
 
 @SpringBootTest
@@ -40,7 +45,6 @@ public class SpreadSheetServiceImplTest {
         when(spreadSheetRepository.findAll()).thenReturn(returnListSpreadSheetEntity());
     }
 
-
     @Test
     public void saveSpreadSheetToDatabaseReturnOk() throws Exception{
         assertEquals(returnSpreadSheetEntity(), spreadSheetService.saveSpreadSheetToDatabase(returnSpreadSheetEntity()));
@@ -49,6 +53,11 @@ public class SpreadSheetServiceImplTest {
     @Test
     public void getSpreadSheetsReturnOk() throws Exception{
         assertEquals(returnListSpreadSheetEntity(), spreadSheetService.getSpreadSheets());
+    }
+
+    @Test
+    public void validateExcelFileReturnTrue() throws Exception{
+        assertTrue(spreadSheetService.validateExcelFile(returnValidFile()));
     }
 
     private SpreadSheetEntity returnSpreadSheetEntity() {
@@ -62,4 +71,13 @@ public class SpreadSheetServiceImplTest {
         return list;
     }
 
+    private MultipartFile returnValidFile() throws IOException {
+        FileInputStream file = new FileInputStream("src/test/resource/desafio2.xlsx");
+
+        return new MockMultipartFile(
+                "file",
+                "desafio2.xlsx",
+                "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+                file);
+    }
 }
