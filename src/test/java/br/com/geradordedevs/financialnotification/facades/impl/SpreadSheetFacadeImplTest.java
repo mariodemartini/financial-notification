@@ -52,6 +52,7 @@ public class SpreadSheetFacadeImplTest {
     private static final BigDecimal MOCK_INPUT = new BigDecimal(100.00);
     private static final BigDecimal MOCK_OUTPUT = new BigDecimal(50.00);
     private static final BigDecimal MOCK_AMOUNT = new BigDecimal(50.00);
+    private static final BigDecimal MOCK_NEGATIVE_AMOUNT = BigDecimal.valueOf(-50.00);
 
     @Before
     public void setupMock(){
@@ -73,8 +74,8 @@ public class SpreadSheetFacadeImplTest {
 
     @Test
     public void sendEMailReturnOk() throws Exception{
-        spreadSheetFacade.sendEmail(MOCK_MONTH, MOCK_AMOUNT);
-        verify(sendEmailService, timeout(1)).sendEmail(MOCK_MONTH, MOCK_AMOUNT);
+        spreadSheetFacade.sendEmail(MOCK_MONTH, MOCK_NEGATIVE_AMOUNT);
+        verify(sendEmailService, timeout(1)).sendEmail(MOCK_MONTH, MOCK_NEGATIVE_AMOUNT);
     }
 
     private List<SpreadSheetResponseDTO> returnListSpreadSheetDTO() {
