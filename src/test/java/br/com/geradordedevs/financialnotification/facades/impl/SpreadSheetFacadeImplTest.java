@@ -6,7 +6,6 @@ import br.com.geradordedevs.financialnotification.entites.SpreadSheetEntity;
 import br.com.geradordedevs.financialnotification.mappers.SpreadSheetMapper;
 import br.com.geradordedevs.financialnotification.services.SendEmailService;
 import br.com.geradordedevs.financialnotification.services.SpreadSheetService;
-import org.apache.poi.hpsf.ClassIDPredefined;
 import org.junit.Before;
 import org.junit.Test;
 import org.junit.runner.RunWith;
@@ -15,18 +14,14 @@ import org.mockito.Mock;
 import org.mockito.MockitoAnnotations;
 import org.mockito.junit.MockitoJUnitRunner;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.core.io.ClassPathResource;
 import org.springframework.mock.web.MockMultipartFile;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Objects;
 
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.*;
